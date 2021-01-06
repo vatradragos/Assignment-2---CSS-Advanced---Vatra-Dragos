@@ -1,0 +1,117 @@
+/* Start stil <html> */
+
+/* Am stilizat culoarea de fundal a intregii pagini*/
+
+html {
+	background-color: #050210;
+}
+
+/* Stop stil <html> */
+
+/* Start stil <body> */
+
+/* Stop stil <body> */
+
+/* Start stil <header> */
+
+/* Stop stil <header> */
+
+/* Start stil <section> */
+
+/* Pentru cercul exterior am stilizat pentru inceput pozitia,
+am centrat elementul pe pagina, am setat o margine de sus,
+am setat latimea si inaltimea elementului, am folosit culoarea gradienta indicata,
+am creat din element un cerc, am adaugat o umbra in jurul elementului folosind culorile
+gradiente si transparenta si am creat o animatie */
+
+#cerc-exterior {
+  position: relative;
+  margin: 0 auto;
+  top: 75px;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+  border-radius: 50%;
+  box-shadow: 0px 0px 100px 30px rgba(251, 93, 173, 0.5), 0px 0px 100px 20px rgba(85, 251, 159, 0.5), 0px 0px 100px 10px rgba(185, 122, 255, 0.5);
+  animation: rotatie 1.5s linear infinite;
+}
+
+/* Pentru animatia divului parinte am creat o animatie
+de tip transformare bidimensionala */
+
+@keyframes rotatie {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Pentru mai multe efecte vizuale ale divului parinte
+m-am ajutat de filtrele contrast, blur, hue-ratation si opacity
+pe care le-am aplicat pseudo-elementului */
+
+#cerc-exterior::before {
+  content: "";
+  filter: contrast(30%);
+  filter: blur(10px);
+  filter: hue-rotate(180deg);
+  filter: opacity(80%);
+}
+
+/* Pentru cercul interior am creat punctul de referinta, am stilizat pozitia elementului,
+am centrat divul-copil pe divul-parinte, am setat latimea si inaltimea,
+am setat ca culoare de fundal aceeasi culoare ca cea a elementului <html>
+si am creat cercul*/
+
+#cerc-interior {
+  transform-origin: 50% 50% 0;
+	position: absolute;
+  transform: translate(50px, 50px);
+  width: 400px;
+  height: 400px;
+  background-color: #050210;
+  border-radius: 50%;
+}
+
+/* Pentru a creea ce-a de-a doua animatie m-am ajutat
+de elementul <span> caruia i-am setat punctul de referinta,
+pozitia, latimea si inaltimea aceeasi cu a divului-copil,
+am facut un cerc din elementul <span> si am creat o animatie*/
+
+#nuanta {
+  transform-origin: 50% 50% 0;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: #08031c;
+  border-radius: 50%;
+  animation: nuantare 1.5s ease-in-out infinite;
+}
+
+/* Pentru mai multe efecte vizuale ale elementului <span>
+m-am ajutat de filtrele brithness si contrast pe care le-am
+aplicat pseudo-elementului  */
+
+#nuanta::after {
+  content: "";
+  filter: brightness(0.5);
+  filter: contrast(70%);
+}
+
+/* Pentru animatia elementului <span> am creat o animatie
+de tip transformare bidimensionala */
+
+@keyframes nuantare {
+  0% {
+    transform: scale(0%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+
+/* Stop stil <section> */
+
+/* Start stil <footer> */
+
+/* Stop stil <footer> */
